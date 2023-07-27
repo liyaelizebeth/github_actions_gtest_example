@@ -1,8 +1,3 @@
-[11:55 AM] Ismail Anootha (MS/ECP2-XC)
-
-
-
-
 #include "gtest/gtest.h"
 
 
