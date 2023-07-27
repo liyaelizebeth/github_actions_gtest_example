@@ -41,41 +41,69 @@ class A{
 
 };
 
+class TestFixtureTestSuite:public testing::Test{
+    protected:
+    void SetUp(){
+        //Arrange
+        this->cPtr=new C();
+        this->bPtr=new B(cPtr);
+        this->aPtr=new A(bPtr);
+
+    }
+    void TearDown(){
+        //delete resources
+        delete cPtr;
+        delete bPtr;
+        delete aPtr;
+
+    }
 
 
 
-TEST(TestFixtureTestSuite,OperationTrueTest){
+
+};
+
+TEST_F(TestFixtureTestSuite,OperationTrueTest){
+    ASSERT_TRUE(aPtr->operation());
+}
+
+TEST_F(TestFixtureTestSuite,OperationFalseTest){
+    ASSERT_FALSE(aPtr->operation());
+}
+
+
+//TEST(TestFixtureTestSuite,OperationTrueTest){
 
     //Arrange
 
-    C cObj;
+    //C cObj;
 
-    B bObj(&cObj);
+    //B bObj(&cObj);
 
-    A obj(&bObj);
+    //A obj(&bObj);
 
     //Act and Assert
 
-    ASSERT_TRUE(obj.operation());
+    //ASSERT_TRUE(obj.operation());
 
-}
+//}
 
-TEST(TestFixtureTestSuite,OperationFalseTest){
+//TEST(TestFixtureTestSuite,OperationFalseTest){
 
     //Arrange
 
-    C cObj;
+    //C cObj;
 
-    B bObj(&cObj);
+    //B bObj(&cObj);
 
-    A obj(&bObj);
+    //A obj(&bObj);
 
     //Act and Assert
 
-    ASSERT_FALSE(obj.operation());
+    //ASSERT_FALSE(obj.operation());
 
 
 
 
 
-}
+//}
