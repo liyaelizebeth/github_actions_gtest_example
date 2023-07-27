@@ -18,7 +18,7 @@ class B{
 };
 class C{};
 
-TEST("TestFixtureTestSuite","OperationTest"){
+TEST(TestFixtureTestSuite,OperationTest){
     C cObj;
     B bObj(&cObj);
     A obj(&bObj);
@@ -26,7 +26,7 @@ TEST("TestFixtureTestSuite","OperationTest"){
     ASSERT_TRUE(obj.operation());
 }
 
-TEST("TestFixtureTestSuite","OperationTest"){
+TEST(TestFixtureTestSuite,OperationTest){
     C cObj;
     B bObj(&cObj);
     A obj(&bObj);
